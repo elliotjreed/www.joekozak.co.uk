@@ -19,9 +19,7 @@ const About = (): JSX.Element => {
                 <h2 className="title has-text-centered section-title">What I will do for money...</h2>
               </div>
               <div className="column is-12">
-                <p className="has-text-centered">
-                  Coming soon!
-                </p>
+                <p className="has-text-centered">Coming soon!</p>
               </div>
               <div className="column is-4 is-offset-4">
                 <figure className="image">

@@ -8,10 +8,7 @@ const Home = (): JSX.Element => {
     <>
       <Helmet>
         <title>Joe Kozak</title>
-        <meta
-          name="description"
-          content="All-round entertainer. Bearded."
-        />
+        <meta name="description" content="All-round entertainer. Bearded." />
       </Helmet>
 
       <main className="main-content">

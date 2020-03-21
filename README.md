@@ -6,7 +6,7 @@ The website source code for Crescent HR.
 
 ## PHP API Backend
 
-PHP 7.3 or above and Composer is expected to be installed on our system.
+PHP 7.4 or above and Composer is expected to be installed on our system.
 
 The backend API is located under the `./api` directory.
 
