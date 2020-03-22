@@ -7,7 +7,7 @@ module.exports = {
   module: {
     rules: [
       {
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!(dom7|ssr-window|swiper|react-id-swiper|react-spring)\/).*/,
         test: /\.js$/,
         use: ["babel-loader", "source-map-loader"]
       },
@@ -19,13 +19,6 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        loaders: [
-          "file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]",
-          "image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false"
-        ],
-        test: /\.(jpe?g|png|gif|svg)$/i
       }
     ]
   },
