@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 
 import "./../assets/scss/App.scss";
@@ -32,11 +33,30 @@ const About = (): JSX.Element => {
                       .interpolate(x => `scale(${x})`)
                   }}
                 >
-                  What I will do for money...
+                  Welcome to my silly little world!
                 </animated.h2>
               </div>
-              <div className="column is-12">
-                <p className="has-text-centered">Coming soon!</p>
+              <div className="column is-12 content">
+                <p className="has-text-centered">
+                  I am an 11 year veteran in the entertainment industry specialising as a comedian and vocalist.
+                </p>
+                <p className="has-text-centered">
+                  Having worked for all of the major British holiday resorts I moved to London where I appeared in
+                  &lsquo;Made in Chelsea&rsquo; and &lsquo;Duck quacks don&apos;t echo&rsquo; as well as many of
+                  London&apos;s biggest and best comedy clubs. It was here I became a voice of student radio show;
+                  &lsquo;Monday morning glory&rsquo; and worked alongside some of the best in the UK&apos;s music and
+                  arts industry.
+                </p>
+                <p className="has-text-centered">
+                  After 5 months working as the lead presenter for Holiday Village in the Balearic Islands I returned to
+                  the UK to join the team on board a cruise liner and then opted for dry land where I have been working
+                  as an adult entertainer hosting &lsquo;Bonkers Bingo&rsquo; and adult only comedy nights as well as
+                  developing a vocal set and some online content.
+                </p>
+                <p className="has-text-centered">
+                  Take a look, have some fun and if you think I am what your night needs,{" "}
+                  <Link to="/contact">give me a message!</Link>
+                </p>
               </div>
               <div className="column is-4 is-offset-4">
                 <figure className="image">

@@ -7,7 +7,9 @@ import { useSpring, animated } from "react-spring";
 import "./../assets/scss/App.scss";
 
 const renderSuccess: JSX.Element = (
-  <div className="notification is-primary">Thank you for your enquiry. I&apos;ll get back to you shortly!</div>
+  <div className="notification is-primary has-text-centered">
+    Thank you for your enquiry. I&apos;ll get back to you shortly!
+  </div>
 );
 
 const Contact = (): JSX.Element => {

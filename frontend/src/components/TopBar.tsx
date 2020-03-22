@@ -81,6 +81,11 @@ const TopBar = (): JSX.Element => {
                       </Link>
                     </div>
                     <div className="navbar-item">
+                      <Link to="/bookings" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Bookings
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
                       <Link to="/contact" className="navbar-item" onClick={(): void => toggleMenu(false)}>
                         Contact
                       </Link>
@@ -109,6 +114,9 @@ const TopBar = (): JSX.Element => {
                   </li>
                   <li>
                     <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/bookings">Bookings</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>

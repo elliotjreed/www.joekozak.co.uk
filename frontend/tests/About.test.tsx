@@ -5,6 +5,6 @@ import About from "../src/components/About";
 describe("About", (): void => {
   it("should render with main-content CSS class and contain title text", (): void => {
     expect(shallow(<About />).exists(".main-content")).toBe(true);
-    expect(shallow(<About />).text()).toContain("What I will do for money");
+    expect(shallow(<About />).text()).toContain("Welcome to my silly little world!");
   });
 });
