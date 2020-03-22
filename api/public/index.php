@@ -5,6 +5,7 @@ declare(strict_types=1);
 use ElliotJReed\Exception\Form;
 use ElliotJReed\ProcessForm;
 use PHPMailer\PHPMailer\PHPMailer;
+use Symfony\Component\Dotenv\Dotenv;
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     \header("Location: https://www.joekozak.co.uk");
@@ -15,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-(Dotenv\Dotenv::create(__DIR__ . '/..'))->load();
+(new Dotenv())->load(__DIR__ . '/..');
 
 try {
     echo \json_encode((new ProcessForm(new PHPMailer(true)))->process($_POST));
