@@ -51,8 +51,8 @@ const Home = (): JSX.Element => {
                 <figure className="image">
                   <img
                     className="is-rounded"
-                    src="https://res.cloudinary.com/elliotjreed/image/upload/v1584810822/joekozak/scottish-joe.jpg"
-                    alt="Photograph of Joe Kozak looking suitably Scottish"
+                    src="https://res.cloudinary.com/elliotjreed/image/upload/f_auto,q_auto/v1584905519/joekozak/black-and-white-joe.jpg"
+                    alt="Photograph of Joe Kozak looking relatively dignified for once"
                   />
                 </figure>
               </div>

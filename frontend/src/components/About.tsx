@@ -42,8 +42,8 @@ const About = (): JSX.Element => {
                 <figure className="image">
                   <img
                     className="is-rounded"
-                    src="https://res.cloudinary.com/elliotjreed/image/upload/v1584812681/joekozak/jazzy-joe.jpg"
-                    alt="Photograph of Joe Kozak looking somewhat jazzy"
+                    src="https://res.cloudinary.com/elliotjreed/image/upload/f_auto,q_auto/v1584905518/joekozak/my-mic-lives-in-my-beard.jpg"
+                    alt="Photograph of Joe Kozak on a stage"
                   />
                 </figure>
               </div>
