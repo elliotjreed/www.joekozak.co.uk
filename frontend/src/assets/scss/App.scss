@@ -8,18 +8,20 @@ $primary: #c0e09f;
 @import "~bulma/sass/elements/button";
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/layout/hero.sass";
-@import "~bulma/sass/layout/footer.sass";
+//@import "~bulma/sass/layout/footer.sass";
 @import "~bulma/sass/components/navbar";
 @import "~bulma/sass/elements/title";
-@import "~bulma/sass/elements/tag";
+//@import "~bulma/sass/elements/tag";
 @import "~bulma/sass/elements/content";
 @import "~bulma/sass/elements/image";
-@import "~bulma/sass/components/card";
-@import "~bulma/sass/components/level";
-@import "~bulma/sass/components/modal";
-@import "~bulma/sass/elements/notification";
+//@import "~bulma/sass/components/card";
+//@import "~bulma/sass/components/level";
+//@import "~bulma/sass/components/modal";
+//@import "~bulma/sass/elements/notification";
 @import "~bulma/sass/form/all";
 @import "spinner";
+@import "~swiper/swiper";
+@import "youtube-button";
 @import url("https://fonts.googleapis.com/css?family=Lato|Poppins");
 
 * {
@@ -27,15 +29,15 @@ $primary: #c0e09f;
 }
 
 html {
-  background: rgba(142, 10, 22, 0.02);
+  background: white;
   font-family: 'Poppins', Lato, Tahoma, sans-serif;
   width: 100%;
   min-height: 100%;
 }
 
 .hero {
-  background-color: #8e0a16;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: white;
+  //box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Poppins', sans-serif;
 }
 

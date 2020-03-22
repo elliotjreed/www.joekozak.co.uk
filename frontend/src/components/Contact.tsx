@@ -1,20 +1,20 @@
-import { useState } from "react";
 import * as React from "react";
+import { useState } from "react";
 import { Helmet } from "react-helmet";
+import { Button } from "./Button";
+import { useSpring, animated } from "react-spring";
 
 import "./../assets/scss/App.scss";
-import Spinner from "./Spinner";
 
 const renderSuccess: JSX.Element = (
-  <div className="notification is-primary">
-    Thank you for your enquiry. We will get back to you via your preferred contact method shortly.
-  </div>
+  <div className="notification is-primary">Thank you for your enquiry. I&apos;ll get back to you shortly!</div>
 );
 
 const Contact = (): JSX.Element => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccessful] = useState(false);
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   const handleSubmit = (event): void => {
     event.preventDefault();
@@ -103,9 +103,7 @@ const Contact = (): JSX.Element => {
       {error === "" ? null : <div className="notification is-danger">{error}</div>}
       <div className="field">
         <div className="control ">
-          <button className="button submit-button" disabled={loading}>
-            {loading ? <Spinner /> : "Submit"}
-          </button>
+          <Button text="SEND" disabled={loading} />
         </div>
       </div>
     </form>
@@ -114,22 +112,23 @@ const Contact = (): JSX.Element => {
   return (
     <>
       <Helmet>
-        <title>Contact | Crescent HR</title>
-        <meta name="description" content="Contact Crescent HR for information, fees, and availability." />
+        <title>Contact | Joe Kozak</title>
+        <meta name="description" content="Contact Joe Kozak for enquiries and bookings." />
       </Helmet>
 
-      <main className="main-content">
+      <animated.main className="main-content" style={props}>
         <div className="section-dark resume">
           <div className="container">
             <div className="columns is-multiline">
-              <div className="column is-12 about-me">
-                <h2 className="title has-text-centered section-title">Get in Touch</h2>
+              <div className="column is-12 has-text-centered">
+                <h2 className="title section-title">Get in Touch</h2>
+                <p>For enquiries, please use the form below or give me a call on (+44) 07570045985.</p>
               </div>
               <div className="column is-8 is-offset-2">{success ? renderSuccess : renderForm}</div>
             </div>
           </div>
         </div>
-      </main>
+      </animated.main>
     </>
   );
 };

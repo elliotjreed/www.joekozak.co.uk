@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
+import { Spring } from "react-spring/renderprops-universal.cjs";
 
 const TopBar = (): JSX.Element => {
   const [menuActive, toggleMenu] = useState(false);
@@ -9,11 +11,16 @@ const TopBar = (): JSX.Element => {
     toggleMenu(!menuActive);
   };
 
+  const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
+
   return (
     <div className="header-wrapper" id="home">
       <section className="hero">
         <nav className="navbar is-transparent is-hidden-desktop">
-          <a className="navbar-brand">
+          <div className="navbar-brand">
+            <Link className="navbar-item" to="/">
+              <h1>JOE KOZAK</h1>
+            </Link>
             <div
               data-target="mobile-nav"
               role="button"
@@ -26,37 +33,69 @@ const TopBar = (): JSX.Element => {
               <span />
               <span />
             </div>
-          </a>
-          <div id="mobile-nav" className={"navbar-menu" + (menuActive ? " is-active" : "")}>
-            <div className="navbar-end">
-              <div className="navbar-item">
-                <Link to="/" className="navbar-item">
-                  Home
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link to="/videos" className="navbar-item">
-                  Videos
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link to="/about" className="navbar-item">
-                  About
-                </Link>
-              </div>
-              <div className="navbar-item">
-                <Link to="/contact" className="navbar-item">
-                  Contact
-                </Link>
-              </div>
-            </div>
           </div>
+          {menuActive ? (
+            <Spring
+              from={{
+                opacity: 0,
+                marginTop: 51
+              }}
+              to={{
+                opacity: 1,
+                marginTop: 0
+              }}
+            >
+              {(props): any => (
+                <div id="mobile-nav" className={"navbar-menu" + (menuActive ? " is-active" : "")} style={props}>
+                  <div className="navbar-end">
+                    <div className="navbar-item">
+                      <Link to="/" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Home
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
+                      <Link to="/videos" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Videos
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
+                      <Link to="/gallery" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Gallery
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
+                      <Link to="/about" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        About
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
+                      <Link to="/contact" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Contact
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </Spring>
+          ) : (
+            false
+          )}
         </nav>
         <div className="hero-foot">
           <div className="hero-foot--wrapper">
             <div className="columns">
               <div className="column is-12 hero-menu-desktop has-text-centered">
-                <ul>
+                <animated.ul
+                  style={{
+                    opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
+                    transform: x
+                      .interpolate({
+                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                        output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
+                      })
+                      .interpolate(x => `scale(${x})`)
+                  }}
+                >
                   <li>
                     <Link to="/">Home</Link>
                   </li>
@@ -64,12 +103,15 @@ const TopBar = (): JSX.Element => {
                     <Link to="/videos">Videos</Link>
                   </li>
                   <li>
+                    <Link to="/gallery">Gallery</Link>
+                  </li>
+                  <li>
                     <Link to="/about">About</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>
                   </li>
-                </ul>
+                </animated.ul>
               </div>
             </div>
           </div>

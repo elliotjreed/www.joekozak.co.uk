@@ -1,9 +1,11 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
+import { animated, useSpring } from "react-spring";
 
 import "./../assets/scss/App.scss";
 
 const About = (): JSX.Element => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   return (
     <>
       <Helmet>
@@ -11,7 +13,7 @@ const About = (): JSX.Element => {
         <meta name="description" content="All about me, Joe Kozak, and my beard." />
       </Helmet>
 
-      <main className="main-content">
+      <animated.main className="main-content" style={props}>
         <div className="section-dark resume">
           <div className="container">
             <div className="columns is-multiline">
@@ -33,7 +35,7 @@ const About = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </main>
+      </animated.main>
     </>
   );
 };

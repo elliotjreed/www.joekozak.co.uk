@@ -1,10 +1,12 @@
 import * as React from "react";
+import { useSpring, animated } from "react-spring";
 
 import "./../assets/scss/App.scss";
 
 const PageNotFound = (): JSX.Element => {
+  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   return (
-    <main className="main-content">
+    <animated.main className="main-content" style={props}>
       <div className="section-dark resume">
         <div className="container">
           <div className="columns is-multiline">
@@ -14,7 +16,7 @@ const PageNotFound = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </main>
+    </animated.main>
   );
 };
 
