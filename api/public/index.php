@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 require __DIR__ . '/../vendor/autoload.php';
 
-(new Dotenv())->load(__DIR__ . '/..');
+(new Dotenv())->load(__DIR__ . '/../.env');
 
 try {
     echo \json_encode((new ProcessForm(new PHPMailer(true)))->process($_POST));
