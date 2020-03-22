@@ -16,10 +16,22 @@ const TopBar = (): JSX.Element => {
   return (
     <div className="header-wrapper" id="home">
       <section className="hero">
-        <nav className="navbar is-transparent is-hidden-desktop">
+        <nav className="navbar is-transparent is-hidden-tablet">
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
-              <h1>JOE KOZAK</h1>
+              <animated.h1
+                style={{
+                  opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
+                  transform: x
+                    .interpolate({
+                      range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                      output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
+                    })
+                    .interpolate(x => `scale(${x})`)
+                }}
+              >
+                JOE KOZAK
+              </animated.h1>
             </Link>
             <div
               data-target="mobile-nav"
@@ -81,21 +93,11 @@ const TopBar = (): JSX.Element => {
             false
           )}
         </nav>
-        <div className="hero-foot">
+        <div className="hero-foot is-hidden-mobile">
           <div className="hero-foot--wrapper">
             <div className="columns">
               <div className="column is-12 hero-menu-desktop has-text-centered">
-                <animated.ul
-                  style={{
-                    opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
-                    transform: x
-                      .interpolate({
-                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                        output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
-                      })
-                      .interpolate(x => `scale(${x})`)
-                  }}
-                >
+                <ul>
                   <li>
                     <Link to="/">Home</Link>
                   </li>
@@ -111,7 +113,7 @@ const TopBar = (): JSX.Element => {
                   <li>
                     <Link to="/contact">Contact</Link>
                   </li>
-                </animated.ul>
+                </ul>
               </div>
             </div>
           </div>

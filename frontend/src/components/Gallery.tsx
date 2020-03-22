@@ -7,6 +7,8 @@ import "./../assets/scss/App.scss";
 
 const Gallery = (): JSX.Element => {
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+  const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
+
   const params = {
     lazy: true,
     loop: true,
@@ -36,7 +38,20 @@ const Gallery = (): JSX.Element => {
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 about-me">
-                <h2 className="title has-text-centered section-title">A selection of photographic articles...</h2>
+                <animated.h2
+                  className="title has-text-centered section-title"
+                  style={{
+                    opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
+                    transform: x
+                      .interpolate({
+                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
+                        output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
+                      })
+                      .interpolate(x => `scale(${x})`)
+                  }}
+                >
+                  A selection of photographic articles...
+                </animated.h2>
               </div>
               <div className="column is-4 is-offset-4">
                 <Swiper {...params}>

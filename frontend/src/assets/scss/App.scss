@@ -8,16 +8,10 @@ $primary: #c0e09f;
 @import "~bulma/sass/elements/button";
 @import "~bulma/sass/grid/columns.sass";
 @import "~bulma/sass/layout/hero.sass";
-//@import "~bulma/sass/layout/footer.sass";
 @import "~bulma/sass/components/navbar";
 @import "~bulma/sass/elements/title";
-//@import "~bulma/sass/elements/tag";
 @import "~bulma/sass/elements/content";
 @import "~bulma/sass/elements/image";
-//@import "~bulma/sass/components/card";
-//@import "~bulma/sass/components/level";
-//@import "~bulma/sass/components/modal";
-//@import "~bulma/sass/elements/notification";
 @import "~bulma/sass/form/all";
 @import "spinner";
 @import "~swiper/swiper";
@@ -103,10 +97,6 @@ html {
     padding-top: 75px;
   }
 }
-
-//.main-content .section-dark.resume .title {
-//  padding: 20px;
-//}
 
 .main-content .section-dark.resume button {
   border: 2px solid #43485c;

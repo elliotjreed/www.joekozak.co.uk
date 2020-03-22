@@ -74,7 +74,8 @@ module.exports = merge(commonConfig, {
     }),
     new PurgecssPlugin({
       paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-      whitelist: ["pre", "code"]
+      whitelistPatterns: [/swiper-/],
+      whitelistPatternsChildren: [/swiper-/]
     }),
     new CopyPlugin([{ from: "./assets/static", to: "./" }]),
     new WorkboxPlugin.GenerateSW({
