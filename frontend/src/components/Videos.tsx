@@ -38,16 +38,22 @@ const Videos = (): JSX.Element => {
                         range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
                         output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
                       })
-                      .interpolate(x => `scale(${x})`)
+                      .interpolate((x) => `scale(${x})`)
                   }}
                 >
                   Some light relief and a sock...
                 </animated.h2>
               </div>
-              <div className="column is-10 is-offset-1">
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="R99LaZC1sNM" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="na2lF6Y0AbM" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
                 <YouTube videoId="ARVNCgiasb0" opts={options} />
               </div>
-              <div className="column is-10 is-offset-1">
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-11">
                 <YouTube videoId="rjmK9HWp_lQ" opts={options} />
               </div>
             </div>
