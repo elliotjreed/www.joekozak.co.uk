@@ -12,11 +12,13 @@ matrix:
 
     - language: php
       php: 7.4
+      cache:
+        directories:
+          - $HOME/.composer/cache/files
       before_script:
         - cd api
         - composer install
       script:
-        - vendor/bin/phpunit -c phpunit.xml --coverage-clover ./build/logs/clover.xml
-        - vendor/bin/phpcs -q -n --colors --standard=ruleset.xml --runtime-set ignore_warnings_on_exit true
+        - composer run-script travis
       after_success:
-        - php vendor/bin/php-coveralls
+        - travis_retry php vendor/bin/php-coveralls

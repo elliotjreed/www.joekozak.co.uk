@@ -31,5 +31,21 @@
     "psr-4": {
       "ElliotJReed\\Tests\\": "tests/"
     }
+  },
+  "scripts": {
+    "test": [
+      "@phpunit:coverage",
+      "@phpcs"
+    ],
+    "travis": [
+      "@phpunit:travis",
+      "@phpcs"
+    ],
+    "phpunit": "vendor/bin/phpunit -c phpunit.xml",
+    "phpunit:debug": "vendor/bin/phpunit --stop-on-failure -c phpunit.xml",
+    "phpunit:coverage": "vendor/bin/phpunit -c phpunit.xml --coverage-html ./coverage --coverage-text",
+    "phpunit:travis": "vendor/bin/phpunit -c phpunit.xml --coverage-clover ./build/logs/clover.xml",
+    "phpcs": "vendor/bin/phpcs --standard=ruleset.xml",
+    "phpcs:fix": "vendor/bin/phpcbf --standard=ruleset.xml"
   }
 }
