@@ -16,7 +16,7 @@ matrix:
         - cd api
         - composer install
       script:
-        - vendor/bin/phpunit -c phpunit.xml --coverage-clover clover.xml
+        - vendor/bin/phpunit -c phpunit.xml --coverage-clover ./build/logs/clover.xml
         - vendor/bin/phpcs -q -n --colors --standard=ruleset.xml --runtime-set ignore_warnings_on_exit true
-      after_script:
-        - php vendor/bin/php-coveralls --coverage_clover=clover.xml -v
+      after_success:
+        - php vendor/bin/php-coveralls

@@ -3,5 +3,7 @@
 /frontend/node_modules
 /frontend/coverage
 /api/vendor
+/api/build
+/api/clover.xml
 .env
-api/.phpunit.result.cache
+.phpunit.result.cache
