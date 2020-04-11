@@ -50,21 +50,8 @@ final class ProcessForm
         }
     }
 
-    private function sanitiseEmail(?string $string): string
+    private function sanitise(string $string): string
     {
-        if ($string === null) {
-            return '';
-        }
-
-        return $this->sanitise(\htmlspecialchars($string));
-    }
-
-    private function sanitise(?string $string): string
-    {
-        if ($string === null) {
-            return '';
-        }
-
         return \trim(\strip_tags($string));
     }
 
@@ -85,10 +72,10 @@ final class ProcessForm
         if (isset($formData['preferredMethod']) && $formData['preferredMethod'] === 'phone') {
             $preferredMethod = 'telephone';
         }
-        $messageBody = \str_replace('FORMMESSAGEBODYCONTENT', $this->sanitiseEmail($formData['message']), $content);
-        $messageBody = \str_replace('FORMMESSAGENAME', $this->sanitiseEmail($formData['name']), $messageBody);
-        $messageBody = \str_replace('FORMMESSAGEPHONE', $this->sanitiseEmail($formData['phone']), $messageBody);
-        $messageBody = \str_replace('FORMMESSAGEEMAIL', $this->sanitiseEmail($formData['email']), $messageBody);
+        $messageBody = \str_replace('FORMMESSAGEBODYCONTENT', \htmlspecialchars($this->sanitise($formData['message'])), $content);
+        $messageBody = \str_replace('FORMMESSAGENAME', \htmlspecialchars($this->sanitise($formData['name'])), $messageBody);
+        $messageBody = \str_replace('FORMMESSAGEPHONE', \htmlspecialchars($this->sanitise($formData['phone'])), $messageBody);
+        $messageBody = \str_replace('FORMMESSAGEEMAIL', \htmlspecialchars($this->sanitise($formData['email'])), $messageBody);
         $messageBody = \str_replace('FORMMESSAGEPREFERREDMETHOD', $preferredMethod, $messageBody);
 
         return $messageBody;
@@ -96,10 +83,10 @@ final class ProcessForm
 
     private function buildAltMessageBody(array $formData): string
     {
-        return 'Name: ' . $this->sanitiseEmail($formData['name']) . "\r\n" .
-               'Email: ' . $this->sanitiseEmail($formData['email']) . "\r\n" .
-               'Phone: ' . $this->sanitiseEmail($formData['phone']) . "\r\n" .
-               'Preferred Contact Method: ' . $this->sanitiseEmail($formData['preferredMethod']) . "\r\n\r\n" .
-               $this->sanitiseEmail($formData['message']);
+        return \htmlspecialchars('Name: ' . $this->sanitise($formData['name']) . "\r\n" .
+               'Email: ' . $this->sanitise($formData['email']) . "\r\n" .
+               'Phone: ' . $this->sanitise($formData['phone']) . "\r\n" .
+               'Preferred Contact Method: ' . $this->sanitise($formData['preferredMethod']) . "\r\n\r\n" .
+               $this->sanitise($formData['message']));
     }
 }

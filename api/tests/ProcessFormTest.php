@@ -60,6 +60,42 @@ final class ProcessFormTest extends TestCase
         $this->assertSame('', $mailerSpy->ErrorInfo);
     }
 
+    public function testItSanitisesInputs(): void
+    {
+        $_ENV['SMTP_HOST'] = 'smtp.example.com';
+        $_ENV['SMTP_USERNAME'] = 'smtp@example.com';
+        $_ENV['SMTP_PASSWORD'] = 'password';
+        $_ENV['SMTP_PORT'] = 567;
+        $_ENV['SMTP_FROM_EMAIL'] = 'from@example.com';
+        $_ENV['SMTP_FROM_NAME'] = 'JoeKozak.co.uk Contact Form';
+        $_ENV['SMTP_SUBJECT'] = 'Message received via JoeKozak.co.uk contact form';
+        $_ENV['SMTP_TO_EMAIL'] = 'to@example.com';
+        $_ENV['SMTP_TO_NAME'] = 'Miss To';
+
+        $mailerSpy = new MailerSpy();
+        (new ProcessForm($mailerSpy))->process([
+            'name' => 'Mr & Mrs Name',
+            'email' => '   mrs.name@example.com    ',
+            'phone' => '<script>console.log("something nefarious")</script>',
+            'message' => 'Hello & > <.',
+            'preferredMethod' => 'phone'
+        ]);
+
+        $this->assertStringContainsString('<strong>Name:</strong> Mr &amp; Mrs Name<br>', $mailerSpy->Body);
+        $this->assertStringContainsString('<strong>Email Address:</strong> mrs.name@example.com<br>', $mailerSpy->Body);
+        $this->assertStringContainsString('<strong>Telephone:</strong> console.log(&quot;something nefarious&quot;)<br>', $mailerSpy->Body);
+        $this->assertStringContainsString('Hello &amp; &gt;', $mailerSpy->Body);
+        $this->assertSame(
+            'Name: Mr &amp; Mrs Name' . "\r\n" .
+            'Email: mrs.name@example.com' . "\r\n" .
+            'Phone: console.log(&quot;something nefarious&quot;)' . "\r\n" .
+            'Preferred Contact Method: phone' . "\r\n\r\n" .
+            'Hello &amp; &gt;',
+            $mailerSpy->AltBody
+        );
+        $this->assertSame('', $mailerSpy->ErrorInfo);
+    }
+
     public function testItReturnsFalseOnMailerException(): void
     {
         $_ENV['SMTP_HOST'] = 'smtp.example.com';
