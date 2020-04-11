@@ -1,8 +1,9 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Button } from "./Button";
-import { useSpring, animated } from "react-spring";
+import { animated, useSpring } from "react-spring";
+import * as ReactGA from "react-ga";
 
 import "./../assets/scss/App.scss";
 
@@ -16,8 +17,12 @@ const Contact = (): JSX.Element => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccessful] = useState(false);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + location.search);
+  }, []);
+
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-  const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
 
   const handleSubmit = (event): void => {
     event.preventDefault();
@@ -96,7 +101,7 @@ const Contact = (): JSX.Element => {
       <div className="field">
         <div className="control">
           <label className="radio">
-            <input type="radio" name="preferredMethod" value="email" disabled={loading} /> Email
+            <input type="radio" name="preferredMethod" value="email" disabled={loading} checked={true} /> Email
           </label>
           <label className="radio">
             <input type="radio" name="preferredMethod" value="phone" disabled={loading} /> Telephone
@@ -124,20 +129,7 @@ const Contact = (): JSX.Element => {
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 has-text-centered">
-                <animated.h2
-                  className="title section-title"
-                  style={{
-                    opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
-                    transform: x
-                      .interpolate({
-                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                        output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
-                      })
-                      .interpolate((x) => `scale(${x})`)
-                  }}
-                >
-                  Get in Touch
-                </animated.h2>
+                <h2 className="title section-title">Get in Touch</h2>
                 <p>For enquiries, please use the form below or give me a call on (+44) 07570045985.</p>
               </div>
               <div className="column is-8 is-offset-2">{success ? renderSuccess : renderForm}</div>

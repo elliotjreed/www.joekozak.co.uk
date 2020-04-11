@@ -1,13 +1,18 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
+import * as ReactGA from "react-ga";
 
 import "./../assets/scss/App.scss";
 
 const Sitemap = (): JSX.Element => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + location.search);
+  }, []);
+
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
-  const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
 
   return (
     <>
@@ -21,20 +26,7 @@ const Sitemap = (): JSX.Element => {
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 about-me">
-                <animated.h2
-                  className="title has-text-centered section-title"
-                  style={{
-                    opacity: x.interpolate({ range: [0, 1], output: [0.3, 1] }),
-                    transform: x
-                      .interpolate({
-                        range: [0, 0.25, 0.35, 0.45, 0.55, 0.65, 0.75, 1],
-                        output: [1, 0.97, 0.9, 1.1, 0.9, 1.1, 1.03, 1]
-                      })
-                      .interpolate((x) => `scale(${x})`)
-                  }}
-                >
-                  Sitemap
-                </animated.h2>
+                <h2 className="title has-text-centered section-title">Sitemap</h2>
                 <ul>
                   <li>
                     <Link to="/">Home</Link>

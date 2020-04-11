@@ -2,9 +2,9 @@ import { createBrowserHistory } from "history";
 import * as React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 
-import "./../assets/scss/App.scss";
 import Spinner from "./Spinner";
 import TopBar from "./TopBar";
+import "./../assets/scss/App.scss";
 
 const Home = React.lazy((): Promise<any> => import(/* webpackChunkName: "home" */ "./Home"));
 const About = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./About"));

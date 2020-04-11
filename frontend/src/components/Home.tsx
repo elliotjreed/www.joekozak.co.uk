@@ -1,10 +1,16 @@
 import * as React from "react";
+import { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { animated, useSpring } from "react-spring";
+import * as ReactGA from "react-ga";
 
 import "./../assets/scss/App.scss";
 
 const Home = (): JSX.Element => {
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + location.search);
+  }, []);
+
   const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
 

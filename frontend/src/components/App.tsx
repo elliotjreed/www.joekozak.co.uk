@@ -1,14 +1,10 @@
 import * as React from "react";
 
-import "./../assets/scss/App.scss";
 import Routes from "./Routes";
+import "./../assets/scss/App.scss";
 
 const App = (): JSX.Element => {
-  return (
-    <>
-      <Routes />
-    </>
-  );
+  return <Routes />;
 };
 
 export default App;
