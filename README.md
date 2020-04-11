@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/elliotjreed/www.joekozak.co.uk.svg?branch=master)](https://travis-ci.org/elliotjreed/www.joekozak.co.uk)
+[![Build Status](https://travis-ci.org/elliotjreed/www.joekozak.co.uk.svg?branch=master)](https://travis-ci.org/elliotjreed/www.joekozak.co.uk) [![Coverage Status](https://coveralls.io/repos/github/elliotjreed/www.joekozak.co.uk/badge.svg?branch=master)](https://coveralls.io/github/elliotjreed/www.joekozak.co.uk?branch=master)
 
 # JoeKozak.co.uk
 
