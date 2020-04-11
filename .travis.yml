@@ -4,6 +4,7 @@ matrix:
       node_js: 12
       install:
         - cd frontend
+        - npm install -g yarn
         - yarn install
       script:
         - yarn test
