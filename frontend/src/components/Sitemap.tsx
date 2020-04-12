@@ -25,9 +25,14 @@ const Sitemap = (): JSX.Element => {
         <div className="section-dark resume">
           <div className="container">
             <div className="columns is-multiline">
-              <div className="column is-12 about-me">
+              <div className="column is-12">
                 <h2 className="title has-text-centered section-title">Sitemap</h2>
-                <ul>
+              </div>
+              <div className="column is-12">
+                <p className="has-text-centered content">
+                  If the website menu wasn&apos;t enough for you, here&apos;s a sitemap:
+                </p>
+                <ul className="has-text-centered">
                   <li>
                     <Link to="/">Home</Link>
                   </li>
@@ -35,7 +40,13 @@ const Sitemap = (): JSX.Element => {
                     <Link to="/videos">Videos</Link>
                   </li>
                   <li>
+                    <Link to="/gallery">Gallery</Link>
+                  </li>
+                  <li>
                     <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/bookings">Bookings</Link>
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>
