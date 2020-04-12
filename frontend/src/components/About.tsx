@@ -18,7 +18,10 @@ const About = (): JSX.Element => {
     <>
       <Helmet>
         <title>About | Joe Kozak</title>
-        <meta name="description" content="All about me, Joe Kozak, and my beard." />
+        <meta
+          name="description"
+          content="Learn a little about me, Joe Kozak, and my story so far as a comedian and vocalist in the entertainment industry."
+        />
       </Helmet>
 
       <animated.main className="main-content" style={props}>

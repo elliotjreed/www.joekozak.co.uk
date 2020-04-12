@@ -18,7 +18,10 @@ const Home = (): JSX.Element => {
     <>
       <Helmet>
         <title>Joe Kozak</title>
-        <meta name="description" content="All-round entertainer. Bearded." />
+        <meta
+          name="description"
+          content="Comedian and vocalist. Appeared in ‘Made in Chelsea’ and ‘Duck quacks don't echo’ and many of London's biggest comedy clubs."
+        />
       </Helmet>
 
       <animated.main className="main-content" style={props}>
@@ -46,7 +49,7 @@ const Home = (): JSX.Element => {
                 <a
                   href="https://www.youtube.com/channel/UCzdMkqMchEvxF4ydusuPV2w"
                   rel="noreferrer noopener"
-                  title="Find me on Youtube!"
+                  title="Find me on YouTube!"
                 >
                   <div className="youtube-button" />
                 </a>

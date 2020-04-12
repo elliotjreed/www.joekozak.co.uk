@@ -35,7 +35,10 @@ const Gallery = (): JSX.Element => {
     <>
       <Helmet>
         <title>Gallery | Joe Kozak</title>
-        <meta name="description" content="Photos of me, Joe Kozak, looking sensible." />
+        <meta
+          name="description"
+          content="Photos of Joe Kozak at various shows and performances, in a variety of interesting choices of attire."
+        />
       </Helmet>
 
       <animated.main className="main-content" style={props}>
@@ -43,7 +46,7 @@ const Gallery = (): JSX.Element => {
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 about-me">
-                <h2 className="title has-text-centered section-title">A selection of photographic articles...</h2>
+                <h2 className="title has-text-centered section-title">Past shows and performances</h2>
               </div>
               <div className="column is-6 is-offset-3">
                 <Swiper {...params}>

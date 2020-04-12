@@ -20,7 +20,7 @@ const Bookings = (): JSX.Element => {
         <title>Bookings | Joe Kozak</title>
         <meta
           name="description"
-          content="Services I provide, make a booking today and you shall likely not be too disappointed!"
+          content="Joe Kozak is available for a number of roles and shows including adult and family comedy shows, event hosting, TV extra work, radio, and solo vocalist sets."
         />
       </Helmet>
 

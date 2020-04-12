@@ -121,7 +121,10 @@ const Contact = (): JSX.Element => {
     <>
       <Helmet>
         <title>Contact | Joe Kozak</title>
-        <meta name="description" content="Contact Joe Kozak for enquiries and bookings." />
+        <meta
+          name="description"
+          content="Contact Joe Kozak for enquiries, bookings, or just to chat about any requirements."
+        />
       </Helmet>
 
       <animated.main className="main-content" style={props}>

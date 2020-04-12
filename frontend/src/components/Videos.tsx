@@ -25,7 +25,7 @@ const Videos = (): JSX.Element => {
         <title>Videos | Joe Kozak</title>
         <meta
           name="description"
-          content="Immerse yourself into a world of polite and intellectual discussion on the nature of the universe and other dairy products."
+          content="Give your self some light relief and catch up on some of Joe Kozak's recent forays into the wonders of YouTube."
         />
       </Helmet>
 
@@ -34,7 +34,7 @@ const Videos = (): JSX.Element => {
           <div className="container">
             <div className="columns is-multiline has-text-centered">
               <div className="column is-12 about-me">
-                <h2 className="title section-title">Some light relief and a sock...</h2>
+                <h2 className="title section-title">Videos</h2>
               </div>
               <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
                 <YouTube videoId="R99LaZC1sNM" opts={options} />
