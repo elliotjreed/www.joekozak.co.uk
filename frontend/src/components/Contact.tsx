@@ -18,7 +18,7 @@ const Contact = (): JSX.Element => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccessful] = useState(false);
 
-  useEffect(() => {
+  useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
