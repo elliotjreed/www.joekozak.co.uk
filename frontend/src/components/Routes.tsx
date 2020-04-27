@@ -8,6 +8,7 @@ import "./../assets/scss/App.scss";
 
 const Home = React.lazy((): Promise<any> => import(/* webpackChunkName: "home" */ "./Home"));
 const About = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./About"));
+const Lockdown = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./Lockdown"));
 const Videos = React.lazy((): Promise<any> => import(/* webpackChunkName: "videos" */ "./Videos"));
 const Gallery = React.lazy((): Promise<any> => import(/* webpackChunkName: "gallery" */ "./Gallery"));
 const Bookings = React.lazy((): Promise<any> => import(/* webpackChunkName: "bookings" */ "./Bookings"));
@@ -25,6 +26,7 @@ const Routes = (): Router => {
         <Switch>
           <Route exact={true} path="/" component={Home} />
           <Route exact={true} path="/about" component={About} />
+          <Route exact={true} path="/lockdown" component={Lockdown} />
           <Route exact={true} path="/videos" component={Videos} />
           <Route exact={true} path="/gallery" component={Gallery} />
           <Route exact={true} path="/bookings" component={Bookings} />

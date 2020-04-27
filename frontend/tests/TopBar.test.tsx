@@ -6,6 +6,6 @@ import TopBar from "../src/components/TopBar";
 describe("TopBar", (): void => {
   it("should render with navbar CSS class and contain links", (): void => {
     expect(shallow(<TopBar />).exists(".navbar")).toBe(true);
-    expect(shallow(<TopBar />).find(Link)).toHaveLength(7);
+    expect(shallow(<TopBar />).find(Link)).toHaveLength(8);
   });
 });

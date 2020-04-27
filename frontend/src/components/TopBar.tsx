@@ -66,6 +66,11 @@ const TopBar = (): JSX.Element => {
                       </Link>
                     </div>
                     <div className="navbar-item">
+                      <Link to="/lockdown" className="navbar-item" onClick={(): void => toggleMenu(false)}>
+                        Lockdown
+                      </Link>
+                    </div>
+                    <div className="navbar-item">
                       <Link to="/videos" className="navbar-item" onClick={(): void => toggleMenu(false)}>
                         Videos
                       </Link>
@@ -105,6 +110,9 @@ const TopBar = (): JSX.Element => {
                 <ul>
                   <li>
                     <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/lockdown">Lockdown</Link>
                   </li>
                   <li>
                     <Link to="/videos">Videos</Link>
