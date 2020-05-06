@@ -37,10 +37,15 @@ const Lockdown = (): JSX.Element => {
                 <h2 className="title section-title">Get the Lockdown Look</h2>
               </div>
               <div className="column is-12 content">
-                <p className="has-text-centered">Get the lockdown look with my inspirational workout routines.</p>
+                <p className="has-text-centered">
+                  Get the lockdown look with my inspirational workout routines and dietary advice.
+                </p>
               </div>
               <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-11">
                 <YouTube videoId="aTDSmsIuaho" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-11">
+                <YouTube videoId="ygtP0kQPYG4" opts={options} />
               </div>
             </div>
           </div>
