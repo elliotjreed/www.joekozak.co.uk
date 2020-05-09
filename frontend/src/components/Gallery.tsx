@@ -8,7 +8,7 @@ import * as ReactGA from "react-ga";
 import "./../assets/scss/App.scss";
 
 const Gallery = (): JSX.Element => {
-  useEffect(() => {
+  useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
@@ -31,6 +31,7 @@ const Gallery = (): JSX.Element => {
       prevEl: ".swiper-button-prev"
     }
   };
+
   return (
     <>
       <Helmet>
@@ -42,7 +43,7 @@ const Gallery = (): JSX.Element => {
       </Helmet>
 
       <animated.main className="main-content" style={props}>
-        <div className="section-dark resume">
+        <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 about-me">

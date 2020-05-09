@@ -8,7 +8,7 @@ import * as ReactGA from "react-ga";
 import "./../assets/scss/App.scss";
 
 const Sitemap = (): JSX.Element => {
-  useEffect(() => {
+  useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
@@ -22,7 +22,7 @@ const Sitemap = (): JSX.Element => {
       </Helmet>
 
       <animated.main className="main-content" style={props}>
-        <div className="section-dark resume">
+        <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12">
@@ -50,6 +50,9 @@ const Sitemap = (): JSX.Element => {
                   </li>
                   <li>
                     <Link to="/contact">Contact</Link>
+                  </li>
+                  <li>
+                    <Link to="/lockdown">Lockdown</Link>
                   </li>
                 </ul>
               </div>

@@ -31,6 +31,11 @@
         <priority>0.4</priority>
     </url>
     <url>
+        <loc>https://www.joekozak.co.uk/lockdown</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    <url>
         <loc>https://www.joekozak.co.uk/sitemap</loc>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>

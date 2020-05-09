@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import TopBar from "../src/components/TopBar";
+import { TopBar } from "../src/components/TopBar";
 
 describe("TopBar", (): void => {
   it("should render with navbar CSS class and contain links", (): void => {

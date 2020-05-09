@@ -8,7 +8,7 @@ import { animated, useSpring } from "react-spring";
 import "./../assets/scss/App.scss";
 
 const About = (): JSX.Element => {
-  useEffect(() => {
+  useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
@@ -25,7 +25,7 @@ const About = (): JSX.Element => {
       </Helmet>
 
       <animated.main className="main-content" style={props}>
-        <div className="section-dark resume">
+        <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 about-me">

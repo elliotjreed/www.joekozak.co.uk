@@ -24,105 +24,9 @@ $primary: red;
 
 html {
   background: white;
-  font-family: 'Poppins', Lato, Tahoma, sans-serif;
+  font-family: "Poppins", Lato, Tahoma, sans-serif;
   width: 100%;
   min-height: 100%;
-}
-
-.hero {
-  background-color: white;
-  //box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  font-family: 'Poppins', sans-serif;
-}
-
-.hero .hero-foot {
-  height: 50px;
-  background: white;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.082);
-}
-
-@media (max-width: 599px) {
-  .hero .hero-foot {
-    display: none;
-  }
-}
-
-.hero .hero-foot .hero-foot--wrapper {
-  margin: 7px auto;
-  height: 50px;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop {
-  line-height: 38px;
-  font-weight: 600;
-  text-transform: lowercase;
-  letter-spacing: 1px;
-  font-size: 1rem;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li {
-  display: inline-block;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a {
-  color: #43485c;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li.is-active a {
-  border-bottom: 2px solid #43485c;
-}
-
-.hero .hero-foot .hero-foot--wrapper .hero-menu-desktop ul li a:hover {
-  color: #1f2c6c;
-  transition: all 0.2s ease-in-out;
-  border-bottom: 2px solid #43485c;
-}
-
-.main-content {
-  color: #43485c;
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-.main-content .section-dark {
-  padding: 60px 0;
-}
-
-@media (max-width: 599px) {
-  .main-content .section-dark.resume {
-    padding-top: 75px;
-  }
-}
-
-.main-content .section-dark.resume button {
-  border: 2px solid #43485c;
-  background: white;
-  color: #43485c;
-  height: 50px;
-  width: 250px;
-  font-size: 1rem;
-}
-
-.main-content .contact {
-  padding: 200px;
-}
-
-@media (max-width: 599px) {
-  .main-content .contact {
-    padding: 60px 20px;
-  }
-}
-
-.main-content .section-title {
-  color: #43485c;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  letter-spacing: 2px;
-  padding-bottom: 30px;
 }
 
 ::-webkit-scrollbar {
@@ -134,6 +38,96 @@ html {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #43485c;
+}
+
+.hero {
+  background-color: white;
+  //box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-family: "Poppins", sans-serif;
+
+  .hero-foot {
+    height: 50px;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.082);
+
+    @media (max-width: 599px) {
+      display: none;
+    }
+
+    .hero-foot--wrapper {
+      margin: 7px auto;
+      height: 50px;
+
+      .hero-menu-desktop {
+        line-height: 38px;
+        font-weight: 600;
+        text-transform: lowercase;
+        letter-spacing: 1px;
+        font-size: 1rem;
+
+        a {
+          color: #43485c;
+
+          :hover {
+            color: #1f2c6c;
+            transition: all 0.2s ease-in-out;
+            border-bottom: 2px solid #43485c;
+          }
+        }
+
+        ul li {
+          display: inline-block;
+          padding-right: 15px;
+          padding-left: 15px;
+
+          .is-active a {
+            border-bottom: 2px solid #43485c;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  color: #43485c;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  .section-padded {
+    padding: 60px 0;
+
+    @media (max-width: 599px) {
+      padding-top: 75px;
+    }
+
+    button {
+      border: 2px solid #43485c;
+      background: white;
+      color: #43485c;
+      height: 50px;
+      width: 250px;
+      font-size: 1rem;
+    }
+  }
+
+  .contact {
+    padding: 200px;
+
+    @media (max-width: 599px) {
+      padding: 60px 20px;
+    }
+  }
+
+  .section-title {
+    color: #43485c;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    padding-bottom: 30px;
+  }
 }
 
 .notification {

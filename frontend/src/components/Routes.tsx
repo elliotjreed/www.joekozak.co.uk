@@ -2,13 +2,13 @@ import { createBrowserHistory } from "history";
 import * as React from "react";
 import { Route, Router, Switch } from "react-router-dom";
 
-import Spinner from "./Spinner";
-import TopBar from "./TopBar";
+import { Spinner } from "./Spinner";
+import { TopBar } from "./TopBar";
 import "./../assets/scss/App.scss";
 
 const Home = React.lazy((): Promise<any> => import(/* webpackChunkName: "home" */ "./Home"));
 const About = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./About"));
-const Lockdown = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./Lockdown"));
+const Lockdown = React.lazy((): Promise<any> => import(/* webpackChunkName: "lockdown" */ "./Lockdown"));
 const Videos = React.lazy((): Promise<any> => import(/* webpackChunkName: "videos" */ "./Videos"));
 const Gallery = React.lazy((): Promise<any> => import(/* webpackChunkName: "gallery" */ "./Gallery"));
 const Bookings = React.lazy((): Promise<any> => import(/* webpackChunkName: "bookings" */ "./Bookings"));
@@ -18,7 +18,7 @@ const PageNotFound = React.lazy((): Promise<any> => import(/* webpackChunkName: 
 
 const history = createBrowserHistory();
 
-const Routes = (): Router => {
+export const Routes = (): Router => {
   return (
     <Router history={history}>
       <TopBar />
@@ -38,5 +38,3 @@ const Routes = (): Router => {
     </Router>
   );
 };
-
-export default Routes;

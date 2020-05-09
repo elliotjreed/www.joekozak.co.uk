@@ -8,7 +8,7 @@ import * as ReactGA from "react-ga";
 import "./../assets/scss/App.scss";
 
 const Lockdown = (): JSX.Element => {
-  useEffect(() => {
+  useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
@@ -25,12 +25,12 @@ const Lockdown = (): JSX.Element => {
         <title>Lockdown | Joe Kozak</title>
         <meta
           name="description"
-          content="Get the lockdown look with Joe Kozak's unique and inspirational workout routines."
+          content="Get the lockdown look with Joe Kozak's unique and inspirational workout routines and dietary advice."
         />
       </Helmet>
 
       <animated.main className="main-content" style={props}>
-        <div className="section-dark resume">
+        <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline has-text-centered">
               <div className="column is-12 about-me">

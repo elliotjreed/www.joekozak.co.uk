@@ -2,7 +2,7 @@ import * as React from "react";
 import { render } from "react-dom";
 import * as ReactGA from "react-ga";
 
-import App from "./components/App";
+import { App } from "./components/App";
 import "./assets/scss/App.scss";
 
 if ("serviceWorker" in navigator) {

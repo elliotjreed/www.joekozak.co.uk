@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import { Spring } from "react-spring/renderprops-universal.cjs";
 
-const TopBar = (): JSX.Element => {
+export const TopBar = (): JSX.Element => {
   const [menuActive, toggleMenu] = useState(false);
 
   const menuClick = (): void => {
@@ -57,7 +57,7 @@ const TopBar = (): JSX.Element => {
                 marginTop: 0
               }}
             >
-              {(props): any => (
+              {(props): JSX.Element => (
                 <div id="mobile-nav" className={"navbar-menu" + (menuActive ? " is-active" : "")} style={props}>
                   <div className="navbar-end">
                     <div className="navbar-item">
@@ -138,5 +138,3 @@ const TopBar = (): JSX.Element => {
     </div>
   );
 };
-
-export default TopBar;

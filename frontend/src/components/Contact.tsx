@@ -101,7 +101,7 @@ const Contact = (): JSX.Element => {
       <div className="field">
         <div className="control">
           <label className="radio">
-            <input type="radio" name="preferredMethod" value="email" disabled={loading} checked={true} /> Email
+            <input type="radio" name="preferredMethod" value="email" disabled={loading} defaultChecked /> Email
           </label>
           <label className="radio">
             <input type="radio" name="preferredMethod" value="phone" disabled={loading} /> Telephone
@@ -128,7 +128,7 @@ const Contact = (): JSX.Element => {
       </Helmet>
 
       <animated.main className="main-content" style={props}>
-        <div className="section-dark resume">
+        <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
               <div className="column is-12 has-text-centered">
