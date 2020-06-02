@@ -41,6 +41,12 @@ const Lockdown = (): JSX.Element => {
                   Get the lockdown look with my inspirational workout routines and dietary advice.
                 </p>
               </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="b-9qOmTTeYk" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="6cd2RoJVM0g" opts={options} />
+              </div>
               <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-11">
                 <YouTube videoId="aTDSmsIuaho" opts={options} />
               </div>
