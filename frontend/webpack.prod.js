@@ -80,7 +80,7 @@ module.exports = merge(commonConfig, {
       whitelistPatterns: [/swiper-/],
       whitelistPatternsChildren: [/swiper-/]
     }),
-    new CopyPlugin([{ from: "./assets/static", to: "./" }]),
+    new CopyPlugin({ patterns: [{ from: "./assets/static", to: "./" }] }),
     new WorkboxPlugin.GenerateSW({
       clientsClaim: true,
       skipWaiting: true
