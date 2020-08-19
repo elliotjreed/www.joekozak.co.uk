@@ -2,12 +2,12 @@
 
 $primary: red;
 
-@import "~bulma/sass/utilities/_all.sass";
-@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/utilities/_all";
+@import "~bulma/sass/base/_all";
 @import "~bulma/sass/elements/container";
 @import "~bulma/sass/elements/button";
-@import "~bulma/sass/grid/columns.sass";
-@import "~bulma/sass/layout/hero.sass";
+@import "~bulma/sass/grid/columns";
+@import "~bulma/sass/layout/hero";
 @import "~bulma/sass/components/navbar";
 @import "~bulma/sass/elements/title";
 @import "~bulma/sass/elements/content";

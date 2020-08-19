@@ -37,6 +37,12 @@ const Videos = (): JSX.Element => {
                 <h2 className="title section-title">Videos</h2>
               </div>
               <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="hGoz6fNWn1E" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
+                <YouTube videoId="fjyVThNzCj0" opts={options} />
+              </div>
+              <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">
                 <YouTube videoId="b-9qOmTTeYk" opts={options} />
               </div>
               <div className="column is-8-desktop is-offset-2-desktop is-10 is-offset-1">

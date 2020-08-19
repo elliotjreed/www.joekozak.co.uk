@@ -38,7 +38,7 @@ export const TopBar = (): JSX.Element => {
               role="button"
               className={"navbar-burger burger navbar" + (menuActive ? " is-active" : "")}
               aria-label="menu"
-              aria-expanded="false"
+              aria-expanded={menuActive ? "true" : "false"}
               onClick={menuClick}
             >
               <span />
