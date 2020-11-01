@@ -2,7 +2,7 @@
 
 # JoeKozak.co.uk
 
-The website source code for Crescent HR.
+The website source code for JoeKozak.co.uk
 
 ## PHP API Backend
 
