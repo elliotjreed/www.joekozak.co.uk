@@ -1,7 +1,7 @@
 matrix:
   include:
     - language: node_js
-      node_js: 13
+      node_js: 14
       before_install:
         - cd frontend
         - npm install -g yarn
