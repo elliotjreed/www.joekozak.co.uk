@@ -1,17 +1,12 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { animated, useSpring } from "react-spring";
 import { Helmet } from "react-helmet";
 import * as ReactGA from "react-ga";
-
-import "./../assets/scss/App.scss";
 
 const PageNotFound = (): JSX.Element => {
   useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
-
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
 
   return (
     <>
@@ -20,7 +15,7 @@ const PageNotFound = (): JSX.Element => {
         <meta name="description" content="The page you are looking for does not exist." />
       </Helmet>
 
-      <animated.main className="main-content" style={props}>
+      <main className="main-content">
         <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
@@ -30,7 +25,7 @@ const PageNotFound = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </animated.main>
+      </main>
     </>
   );
 };

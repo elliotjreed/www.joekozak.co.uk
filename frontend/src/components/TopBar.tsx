@@ -46,7 +46,7 @@ export const TopBar = (): JSX.Element => {
               <span />
             </div>
           </div>
-          {menuActive ? (
+          {menuActive && (
             <Spring
               from={{
                 opacity: 0,
@@ -99,8 +99,6 @@ export const TopBar = (): JSX.Element => {
                 </div>
               )}
             </Spring>
-          ) : (
-            false
           )}
         </nav>
         <div className="hero-foot is-hidden-mobile">

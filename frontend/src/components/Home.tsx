@@ -4,14 +4,11 @@ import { Helmet } from "react-helmet";
 import { animated, useSpring } from "react-spring";
 import * as ReactGA from "react-ga";
 
-import "./../assets/scss/App.scss";
-
 const Home = (): JSX.Element => {
   useEffect((): void => {
     ReactGA.pageview(window.location.pathname + location.search);
   }, []);
 
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
   const { x } = useSpring({ from: { x: 0 }, x: 1, config: { duration: 1000 } });
 
   return (
@@ -24,7 +21,7 @@ const Home = (): JSX.Element => {
         />
       </Helmet>
 
-      <animated.main className="main-content" style={props}>
+      <main className="main-content">
         <div className="section-padded">
           <div className="container">
             <div className="columns is-multiline">
@@ -68,7 +65,7 @@ const Home = (): JSX.Element => {
             </div>
           </div>
         </div>
-      </animated.main>
+      </main>
     </>
   );
 };

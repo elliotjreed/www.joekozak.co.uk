@@ -1,6 +1,6 @@
 import * as React from "react";
-import { animated, useSpring } from "react-spring";
 import { useState } from "react";
+import { animated, useSpring } from "react-spring";
 
 interface Props {
   text: string;

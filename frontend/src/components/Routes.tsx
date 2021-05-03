@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { Spinner } from "./Spinner";
 import { TopBar } from "./TopBar";
-import "./../assets/scss/App.scss";
 
 const Home = React.lazy((): Promise<any> => import(/* webpackChunkName: "home" */ "./Home"));
 const About = React.lazy((): Promise<any> => import(/* webpackChunkName: "about" */ "./About"));
